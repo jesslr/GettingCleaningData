@@ -1,7 +1,9 @@
-# Codebook for Getting and Cleaning Data Course Project 
+# Codebook  
+##Getting and Cleaning Data Course Project 
+
 This document provides information on how the data was arranged originally and how it was
 transformed and combined to create a tidy dataset.
-=================
+
 
 ## Original data
 
