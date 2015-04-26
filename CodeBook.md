@@ -14,7 +14,7 @@ Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-
 
 For more information about this dataset contact: activityrecognition@smartlab.ws
 
-## Original data
+## Original Data
 
 #### Data Set Information 
 (from http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones):
@@ -36,7 +36,7 @@ The gravitational force is assumed to have only low frequency components, theref
 with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by 
 calculating variables from the time and frequency domain.
 
-#### Files included
+#### Included Files
 
 * 'README.txt'
 
@@ -80,7 +80,7 @@ For each record it is provided (from readme.txt provided with data):
 * Its activity label. 
 * An identifier of the subject who carried out the experiment.
 
-#### Feature vector 
+#### Feature Vector 
 
 The following is documented in the features_info.txt provided in the zipped data:
 
@@ -152,8 +152,22 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 
 The complete list of variables of each feature vector is available in 'features.txt'
 
+## Data Transformation
 
-## Codebook
+The first goal of the project is to merge test and training datasets.  
+The R script reads in activity, subject and features files for test and train datasets: 
+
+activityTest  <- read.table(file.path(path, "test" , "Y_test.txt" ), header = FALSE)
+activityTrain <- read.table(file.path(path, "train", "Y_train.txt"), header = FALSE)
+
+subjectTrain <- read.table(file.path(path, "train", "subject_train.txt"), header = FALSE)
+subjectTest  <- read.table(file.path(path, "test" , "subject_test.txt"), header = FALSE)
+
+featuresTest  <- read.table(file.path(path, "test" , "X_test.txt" ), header = FALSE)
+featuresTrain <- read.table(file.path(path, "train", "X_train.txt"), header = FALSE)
+
+
+
 
 
 In addition, two variables were integrated with the data set. A descriptive
@@ -176,13 +190,5 @@ So, each of the 86 variables above from the HAR data is averaged (mean) across
 all overvations for each subject-activity pair, resulting in a total
 of 180 observations (30 subjects x 6 activities).
 
-## Study Design
 
-This dataset merely cleans and aggregates data from the HAR project, and as
-such has no tudy design of it's own.  The study design for that project is
-available at:
-http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
-
-
-## Citation
 
