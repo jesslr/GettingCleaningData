@@ -234,8 +234,8 @@ subsetData$Activity <- factor(subsetData$Activity, labels=activityLabels[,2])
 
 #### Create second, independent tidy data set with the average of each variable for each activity and each subject.
 
-Also, I add .mean to the necessary variable names to make it clear these are averages
-The script creates the tidy data set, tidy.txt, in the current working directory
+Also, I add .mean to the necessary variable names to make it clear these are averages.  
+The script creates the tidy data set, tidy.txt, in the current working directory.
 
 ```
 # create the tidy data set
