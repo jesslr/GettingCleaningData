@@ -154,7 +154,15 @@ The complete list of variables of each feature vector is available in 'features.
 
 ## Data Transformation
 
-The first goal of the project is to merge test and training datasets.  
+### Project Goals:
+1.  Merges the training and the test sets to create one data set.
+2.  Extracts only the measurements on the mean and standard deviation for each measurement.
+3.  Uses descriptive activity names to name the activities in the data set
+4.  Appropriately labels the data set with descriptive variable names.
+5.  From the data set in step 4, creates a second, independent tidy data set with the 
+average of each variable for each activity and each subject.
+
+#### Merge test and train datasets  
 The R script reads in activity, subject and features files for test and train datasets: 
 
 ```
@@ -168,7 +176,20 @@ featuresTest  <- read.table(file.path(path, "test" , "X_test.txt" ), header = FA
 featuresTrain <- read.table(file.path(path, "train", "X_train.txt"), header = FALSE)
 ```
 
+Then, it creates combined datasets for test and train by subject, activity, and features:
 
+```
+subjectCombined  <- rbind(subjectTrain, subjectTest)
+activityCombined <- rbind(activityTrain, activityTest)
+featuresCombined <- rbind(featuresTrain, featuresTest)
+```
+
+We also read in files containing labels for activity and feature variables:
+
+```
+activityLabels <- read.table(file.path(path, "activity_labels.txt"), header = FALSE)
+featureNames <- read.table(file.path(path, "features.txt"), header = FALSE)
+```
 
 
 In addition, two variables were integrated with the data set. A descriptive
