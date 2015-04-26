@@ -36,14 +36,6 @@ The gravitational force is assumed to have only low frequency components, theref
 with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by 
 calculating variables from the time and frequency domain.
 
-For each record it is provided (from readme.txt provided with data):
-
-* Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
-* Triaxial Angular velocity from the gyroscope. 
-* A 561-feature vector with time and frequency domain variables. 
-* Its activity label. 
-* An identifier of the subject who carried out the experiment.
-
 #### Files included
 
 * 'README.txt'
@@ -72,35 +64,25 @@ The following files are available for the train and test data. Their description
 
 - 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
 
-Notes: 
+#### Notes
 
 - Features are normalized and bounded within [-1,1].
 - Each feature vector is a row on the text file.
 
 
+#### Attribute Information
 
+For each record it is provided (from readme.txt provided with data):
 
+* Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+* Triaxial Angular velocity from the gyroscope. 
+* A 561-feature vector with time and frequency domain variables. 
+* Its activity label. 
+* An identifier of the subject who carried out the experiment.
 
-
-
-
-
-
-
-
-
-Attribute Information:
-
-For each record in the dataset it is provided: 
-- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration. 
-- Triaxial Angular velocity from the gyroscope. 
-- A 561-feature vector with time and frequency domain variables. 
-- Its activity label. 
-- An identifier of the subject who carried out the experiment.
+#### Feature vector 
 
 The following is documented in the features_info.txt provided in the zipped data:
-
-Feature Selection 
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial 
 raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) 
