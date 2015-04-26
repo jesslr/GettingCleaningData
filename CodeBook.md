@@ -191,26 +191,64 @@ activityLabels <- read.table(file.path(path, "activity_labels.txt"), header = FA
 featureNames <- read.table(file.path(path, "features.txt"), header = FALSE)
 ```
 
+#### Label activities and dataset with descriptive variable names
 
-In addition, two variables were integrated with the data set. A descriptive
-factor for the activity observed during each measurement, and the subject
-participating in
-that activity.
+Uses descriptive activity names to name the activities in the data set:
 
-* activity
-* subject
+```
+# label the 561 elements with descriptive names
+colnames(featuresCombined) <- t(featureNames[,2])
 
-## Summary choices
+# label columns of activity and subject
+colnames(activityCombined) <- "Activity"
+colnames(subjectCombined) <- "Subject"
+```
 
-The summary made in creating this dataset based on the HAR data were dictated
-primarily by the instructions of the assignment.  In particular:
+#### Create one data set with test and train and all columns
 
-> 5\. Creates a second, independent tidy data set with the average of each
->    variable for each activity and each subject.
+```
+compData <- cbind(featuresCombined, activityCombined, subjectCombined)
+```
 
-So, each of the 86 variables above from the HAR data is averaged (mean) across
-all overvations for each subject-activity pair, resulting in a total
-of 180 observations (30 subjects x 6 activities).
+#### Extract the measurements on the mean and standard deviation for each measurement
+
+Using grep, I look for only measurements with mean() or std()
+
+```
+# get all column names needed for subset - those containing mean() or std()
+columns <- grep("mean\\(\\)|std\\(\\)", names(compData), ignore.case=TRUE)
+
+# add subject and activity
+columns <- c(563, 562, columns)
+
+# create subset of dataset using the column positions in column variable
+subsetData <- compData[,columns]
+```
+
+#### Label activities values
+
+```
+subsetData$Activity <- factor(subsetData$Activity, labels=activityLabels[,2])
+```
+
+
+#### Create second, independent tidy data set with the average of each variable for each activity and each subject.
+
+Also, I add .mean to the necessary variable names to make it clear these are averages
+
+```
+# create the tidy data set
+meltData <- melt(subsetData, id = c("Subject", "Activity"))
+tidyData <- dcast(meltData, Subject+Activity ~ variable, mean)
+
+#improve column names
+colNames <- names(tidyData)
+colNames <- sapply(colNames, addSuffix, ".mean")
+names(tidyData) <- colNames
+
+# write the tidy data set to a file
+write.table(tidyData, "./tidy.txt", row.names=FALSE)
+```
 
 
 
