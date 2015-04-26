@@ -16,7 +16,8 @@ For more information about this dataset contact: activityrecognition@smartlab.ws
 
 ## Original data
 
-Data Set Information (from http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones):
+#### Data Set Information 
+(from http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones):
 
 The experiments have been carried out with a group of 30 volunteers within an age bracket 
 of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, 
@@ -35,9 +36,7 @@ The gravitational force is assumed to have only low frequency components, theref
 with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by 
 calculating variables from the time and frequency domain.
 
-From the readme.txt file provided with the data:
-
-For each record it is provided:
+For each record it is provided (from readme.txt provided with data):
 
 * Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
 * Triaxial Angular velocity from the gyroscope. 
@@ -45,7 +44,7 @@ For each record it is provided:
 * Its activity label. 
 * An identifier of the subject who carried out the experiment.
 
-The dataset includes the following files:
+#### Files included
 
 * 'README.txt'
 
