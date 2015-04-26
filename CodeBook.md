@@ -157,6 +157,7 @@ The complete list of variables of each feature vector is available in 'features.
 The first goal of the project is to merge test and training datasets.  
 The R script reads in activity, subject and features files for test and train datasets: 
 
+```
 activityTest  <- read.table(file.path(path, "test" , "Y_test.txt" ), header = FALSE)
 activityTrain <- read.table(file.path(path, "train", "Y_train.txt"), header = FALSE)
 
@@ -165,7 +166,7 @@ subjectTest  <- read.table(file.path(path, "test" , "subject_test.txt"), header 
 
 featuresTest  <- read.table(file.path(path, "test" , "X_test.txt" ), header = FALSE)
 featuresTrain <- read.table(file.path(path, "train", "X_train.txt"), header = FALSE)
-
+```
 
 
 
