@@ -68,7 +68,7 @@ The following files are available for the train and test data. Their description
 
 - Features are normalized and bounded within [-1,1].
 - Each feature vector is a row on the text file.
-
+- Files in the Inertial Signals folders are not used.
 
 #### Attribute Information
 
