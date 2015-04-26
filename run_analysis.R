@@ -24,7 +24,7 @@ addSuffix<- function(x, suffix) {
 }
 
 # assumes that the file was unzipped to the home directory/Coursera/DataCleaningProject/
-path  <- file.path("./Coursera/DataCleaningProject", "UCI HAR Dataset")
+path  <- file.path("./", "UCI HAR Dataset")
 files <- list.files(path, recursive=TRUE)
 
 # The following section accomplishes task #1 for the project
@@ -96,4 +96,4 @@ colNames <- sapply(colNames, addSuffix, ".mean")
 names(tidyData) <- colNames
 
 # write the tidy data set to a file
-write.table(tidyData, "./Coursera/DataCleaningProject/tidy.txt", row.names=FALSE)
+write.table(tidyData, "./tidy.txt", row.names=FALSE)
