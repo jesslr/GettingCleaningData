@@ -23,7 +23,7 @@ addSuffix<- function(x, suffix) {
     }
 }
 
-# assumes that the file was unzipped to the home directory/Coursera/DataCleaningProject/
+# assumes that the file was unzipped to the home directory
 path  <- file.path("./", "UCI HAR Dataset")
 files <- list.files(path, recursive=TRUE)
 
